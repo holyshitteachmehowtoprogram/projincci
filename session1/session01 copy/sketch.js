@@ -24,32 +24,8 @@ function setup() {
 }
 
 function draw() {
-  background(15, 18, 30, 40);
+    background(255,165,0);
 
-  let t = frameCount * 0.01;
+    circle(200, 200, 50);
 
-  for (let x = 0; x < width; x += 60) {
-    for (let y = 0; y < height; y += 60) {
-
-      let n = noise(x * 0.01, y * 0.01, t);
-      let size = map(n, 0, 1, 10, 60);
-
-      push();
-      translate(x + 30, y + 30);
-
-      let angle = t + n * TWO_PI;
-      rotate(angle);
-
-      if (n > 0.5) {
-        fill(120 + n * 80, 180, 255, 180);
-        rectMode(CENTER);
-        rect(0, 0, size, size);
-      } else {
-        fill(255, 120 + n * 100, 160, 180);
-        ellipse(0, 0, size, size);
-      }
-
-      pop();
-    }
-  }
 }
