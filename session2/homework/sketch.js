@@ -1,222 +1,130 @@
-let trees = [];
-
 function setup() {
   createCanvas(800, 800);
   noLoop();
-
-  generateForest();
 }
 
 function draw() {
+  background(245, 242, 235);
 
-  background(244, 241, 232);
+  translate(width / 2, height - 100);
 
-  drawPaperTexture();
-
-  drawGround();
-
-  for (let tree of trees) {
-    tree.displayShadow();
-  }
-
-  for (let tree of trees) {
-    tree.display();
-  }
-
-  drawSignalTower(width / 2, height / 2);
+  drawPoplarTree();
 }
 
-function generateForest() {
+function drawPoplarTree() {
 
-  for (let x = 40; x < width - 40; x += 18) {
+  // ===== 树干 =====
 
-    for (let y = 40; y < height - 40; y += 18) {
+  stroke(90, 70, 55);
+  strokeWeight(18);
 
-      let n = noise(
-        x * 0.005,
-        y * 0.005
-      );
+  line(0, 0, 0, -380);
 
-      if (n > 0.45) {
+  // 树皮纹理
 
-        trees.push(
-          new MechanicalTree(
-            x + random(-8, 8),
-            y + random(-8, 8),
-            random(0.7, 1.4)
-          )
-        );
+  stroke(50, 40, 30, 60);
+  strokeWeight(1);
 
-      }
+  for(let i = 0; i < 120; i++) {
 
-    }
-
-  }
-
-}
-
-class MechanicalTree {
-
-  constructor(x, y, s) {
-
-    this.x = x;
-    this.y = y;
-    this.s = s;
-
-    this.h = random(20, 60) * s;
-
-    this.angle =
-      random(-0.12, 0.12);
-
-  }
-
-  displayShadow() {
-
-    push();
-
-    stroke(60, 120, 120, 25);
-
-    strokeWeight(2 * this.s);
+    let y = random(-380, 0);
 
     line(
-      this.x,
-      this.y,
-      this.x + 40,
-      this.y + 20
+      random(-6, 6),
+      y,
+      random(-8, 8),
+      y + random(-8, 8)
     );
-
-    pop();
-
   }
 
-  display() {
+  // ===== 一级枝干 =====
 
-    push();
+  drawBranch(0, -80, -35, 110);
+  drawBranch(0, -140, 35, 120);
+  drawBranch(0, -200, -25, 90);
+  drawBranch(0, -260, 28, 80);
 
-    translate(this.x, this.y);
-
-    rotate(this.angle);
-
-    stroke(90, 166, 167);
-
-    strokeWeight(2 * this.s);
-
-    line(
-      0,
-      0,
-      0,
-      -this.h
-    );
-
-    line(
-      0,
-      -this.h * 0.7,
-      -12 * this.s,
-      -this.h * 0.9
-    );
-
-    line(
-      0,
-      -this.h * 0.5,
-      10 * this.s,
-      -this.h * 0.8
-    );
-
-    noStroke();
-
-    fill(90, 166, 167);
-
-    circle(
-      0,
-      -this.h,
-      8 * this.s
-    );
-
-    circle(
-      -12 * this.s,
-      -this.h * 0.9,
-      6 * this.s
-    );
-
-    circle(
-      10 * this.s,
-      -this.h * 0.8,
-      6 * this.s
-    );
-
-    pop();
-
-  }
-
-}
-
-function drawGround() {
+  // ===== 树冠 =====
 
   noStroke();
 
-  fill(235, 232, 220);
+  for(let i = 0; i < 3500; i++) {
 
-  ellipse(
-    width / 2,
-    height / 2 + 80,
-    650,
-    450
-  );
+    let angle = random(TWO_PI);
 
+    let r = randomGaussian(0, 45);
+
+    let x = cos(angle) * r;
+
+    let y = sin(angle) * r * 2.8;
+
+    fill(
+      random(90,130),
+      random(140,180),
+      random(90,120),
+      40
+    );
+
+    circle(
+      x,
+      y - 420,
+      random(4,10)
+    );
+  }
+
+  // 高光叶片
+
+  for(let i = 0; i < 1200; i++) {
+
+    let angle = random(TWO_PI);
+
+    let r = randomGaussian(0,35);
+
+    let x = cos(angle) * r;
+
+    let y = sin(angle) * r * 2.5;
+
+    fill(
+      180,
+      220,
+      160,
+      25
+    );
+
+    circle(
+      x,
+      y - 420,
+      random(2,6)
+    );
+  }
 }
 
-function drawSignalTower(x, y) {
+function drawBranch(x,y,angle,len){
 
   push();
 
-  translate(x, y);
+  translate(x,y);
 
-  stroke(255, 90, 90);
+  rotate(radians(angle));
 
-  strokeWeight(3);
+  stroke(90,70,55);
+  strokeWeight(5);
 
-  line(0, 0, 0, -120);
+  line(0,0,0,-len);
 
-  line(0, -120, -30, -70);
+  line(
+    0,
+    -len * 0.5,
+    -10,
+    -len * 0.8
+  );
 
-  line(0, -120, 30, -70);
-
-  line(-30, -70, 30, -70);
-
-  line(-20, -40, 20, -40);
-
-  noStroke();
-
-  fill(255, 90, 90);
-
-  circle(0, -130, 14);
-
-  fill(255, 120, 120, 80);
-
-  circle(0, -130, 35);
+  line(
+    0,
+    -len * 0.6,
+    10,
+    -len * 0.9
+  );
 
   pop();
-
-}
-
-function drawPaperTexture() {
-
-  strokeWeight(1);
-
-  for (let i = 0; i < 30000; i++) {
-
-    stroke(
-      random(180, 230),
-      random(180, 230),
-      random(180, 230),
-      8
-    );
-
-    point(
-      random(width),
-      random(height)
-    );
-
-  }
-
 }
