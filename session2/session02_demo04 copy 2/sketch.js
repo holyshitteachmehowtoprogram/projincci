@@ -26,14 +26,14 @@ function draw() {
             rotate(rotaition);
 
             triangle(
-                10, // x1
-                10, // y1
+                10, 
+                10, 
 
-                -10, // x1
-                -10, // y1
+                -10, 
+                -10, 
 
-                -10, // x1
-                10, // y1
+                -10, 
+                10,
                 );
                 pop();
         }
