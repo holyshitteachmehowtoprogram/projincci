@@ -9,7 +9,9 @@ async function setup() {
   // Load the CSV file with a header row
   // NOTE: adjust the file path - it should start in the folder in which you are running the server
   // ideally: the main repo folder
-  table = await loadTable('assets/air-quality.csv', ',', 'header');
+   table = await loadTable('assets/air-quality.csv', ',', 'header');
+
+
 
   // Get the second row (index 1)
   let row = table.getRow(1);
