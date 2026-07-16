@@ -1,1 +1,39 @@
-This repository serves as a portfolio of my work created during the UAL Summer Study Abroad programme. Each project is built upon the technologies introduced throughout the course while being driven by my own artistic ideas, conceptual thinking, and creative exploration. Through creative coding, interaction, AI, and computational media, I aim to transform technical experiments into expressive works that reflect my evolving understanding of digital art and creative computing.
+# Creative Computing Summer School 2026.University of the Arts London
+
+## Preview
+
+<!-- Insert image here -->
+
+<img src="selfie.jpg" width="500">
+
+---
+
+## Project Overview
+
+This project is a self-portrait created in p5.js using simple 2D shapes to recreate my appearance through code.
+
+---
+
+## Learning Objectives
+
+In this workshop I learned how to use functions and basic drawing primitives to build a simple digital illustration.
+
+---
+
+## Reflection
+
+This exercise helped me understand that coding can also be a creative drawing tool, and I enjoyed turning simple geometric shapes into a portrait with my own style.
+
+---
+
+## Tools
+
+p5.js · Visual Studio Code · GitHub
+
+---
+
+## Code
+
+```javascript
+// Paste your code here
+```
