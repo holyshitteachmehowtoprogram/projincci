@@ -353,7 +353,7 @@ class Particle {
 
 }
 ```
-# Session 05 · Artistic Face Recognition System
+## Session 05 · Artistic Face Recognition System
 
 ---
 
@@ -465,3 +465,171 @@ function draw(){
   }
 
 }
+```
+## Session 06 · AI Ethics Research & Prompt Engineering
+
+## Model Researched
+
+**OpenAI – ChatGPT & GPT Image**
+
+---
+
+## Ethical Policy Analysis
+
+### Does the company address ethical issues?
+
+**Yes.** OpenAI explains how AI models are trained, provides usage policies that prohibit harmful or illegal activities, and includes safety systems designed to reduce unsafe outputs. It also explains how user data may be used to improve future models and allows users to control some training preferences. :contentReference[oaicite:0]{index=0}
+
+---
+
+### How was the training data collected?
+
+According to OpenAI, models are trained using a combination of **publicly available information, licensed data, and data created by human trainers**. For individual users, some conversations may also be used to improve models unless users opt out of training. Business products such as ChatGPT Enterprise and the API do not use customer data for training by default. :contentReference[oaicite:1]{index=1}
+
+---
+
+### Are there any limitations on use?
+
+Yes.
+
+OpenAI prohibits the use of its models for illegal activities, fraud, harmful content, abuse, and other unsafe purposes. Users are expected to follow the Usage Policies and Terms of Use when using the services. :contentReference[oaicite:2]{index=2}
+
+---
+
+### Are there any warnings or safeguards?
+
+Yes.
+
+The interface includes content moderation, refusal mechanisms, safety filters and policy enforcement. The model may refuse requests involving dangerous, illegal or harmful content and attempts to reduce misleading or unsafe outputs. :contentReference[oaicite:3]{index=3}
+
+---
+
+### Do you believe the policy is sufficient for an ethical approach?
+
+I think the policies provide a strong foundation for responsible AI use because they clearly explain acceptable use and include multiple safety measures. However, ethical challenges such as bias, copyright, misinformation and transparency remain difficult to solve completely.
+
+---
+
+### What parts of the policy address ethical issues well?
+
+The policy clearly explains:
+
+- prohibited uses
+- user safety
+- responsible AI principles
+- privacy controls
+- transparency about model limitations
+
+These help reduce harmful uses while allowing people to explore creative applications. :contentReference[oaicite:4]{index=4}
+
+---
+
+### What dangers are not fully addressed?
+
+Some issues still remain difficult to solve, including:
+
+- bias inherited from training data
+- copyright ownership of AI-generated content
+- misinformation produced by convincing outputs
+- over-reliance on AI in education and creative industries
+
+These challenges require continuous technical improvement as well as human judgement.
+
+---
+
+### Do these dangers affect some groups more than others?
+
+Yes.
+
+Bias within training data may affect minority communities, underrepresented cultures and languages more significantly, while misinformation may disproportionately affect people with lower levels of digital literacy.
+
+---
+
+### What does the company say about liability?
+
+OpenAI states that users are responsible for how they use the services, and its Terms of Use include limitations of liability under applicable law. Users are expected to review and verify AI-generated outputs rather than relying on them without oversight. :contentReference[oaicite:5]{index=5}
+
+---
+
+### UK Data and AI Ethics Framework
+
+Overall, OpenAI aligns with many principles such as accountability, transparency and safety. However, improving explainability, reducing bias and increasing transparency around training data would strengthen compliance with ethical AI principles.
+
+---
+
+# Prompt Engineering Exercise
+
+## Initial Prompt
+
+> Design a futuristic sci-fi stage with blue lighting.
+
+---
+
+## Refined Prompt
+
+> Design a futuristic science fiction theatre stage inspired by cyberpunk architecture, featuring cool blue lighting, reflective metallic materials, floating holographic displays, cinematic composition, volumetric lighting, soft fog, high detail, symmetrical layout and dramatic atmosphere.
+
+---
+
+## What prompting techniques did you use?
+
+I gradually added more specific details about the environment, composition, materials, lighting, colour palette and atmosphere instead of relying on a short description. Breaking the prompt into clear visual components produced more accurate results.
+
+---
+
+## Was there anything difficult to communicate?
+
+It was difficult to describe abstract feelings such as atmosphere, artistic style and emotional tone. The model sometimes interpreted these concepts differently from what I imagined, so several iterations were needed.
+
+---
+
+## Who is the author of the final result?
+
+I believe the final image is a collaboration between myself and the AI model. I developed the concept, refined the prompts and selected the final outcome, while the model generated the visual details based on my instructions. The creative direction came from me, but the final image would not exist without the AI system.
+
+
+## Session 07 · Image Generation with ComfyUI
+
+---
+
+## Project Overview
+
+This session explored node-based AI image generation using ComfyUI. Instead of relying on a single prompt, I learned how different nodes work together to control the image generation process, including the checkpoint model, text encoder, sampler, latent image and VAE decoder. Compared with web-based image generators, ComfyUI offers much greater flexibility and allows every stage of the workflow to be adjusted independently.
+
+---
+
+## Learning Objectives
+
+I learned how to build a basic image generation workflow in ComfyUI, understand the function of different nodes, adjust sampling parameters, and experiment with prompt engineering to influence the final visual result. This session also introduced the idea that AI image generation is an iterative design process rather than a one-click solution.
+
+---
+
+## Reflection
+
+This session changed my understanding of AI image generation. Instead of treating AI as a black box, I began to understand how different models and parameters affect the final image. Even small changes to prompts or sampling settings could produce very different visual outcomes.
+
+I also realised that generating successful images requires continuous experimentation. Many early results were distorted, incomplete or visually inconsistent, but these unexpected outputs became part of the exploration. Rather than aiming for technical perfection, I became more interested in how AI mistakes could create unusual aesthetics and inspire new creative directions.
+
+---
+
+## Process
+
+I built a basic ComfyUI workflow using a Stable Diffusion checkpoint and experimented with different prompts, sampling methods and generation settings. During the testing process, I repeatedly adjusted the prompt to improve composition, atmosphere and visual details while observing how different parameters influenced the output.
+
+One challenge was that the generated images often failed to match my original intention. Faces became distorted, proportions were inconsistent and objects appeared in unexpected positions. Through multiple iterations, I learned that prompt writing and parameter tuning are equally important in guiding the model toward a desired result, while also accepting that randomness remains an essential part of the creative process.
+
+---
+
+## Tools
+
+ComfyUI · Stable Diffusion Model · Visual Studio Code · GitHub
+
+---
+
+## Generated Result
+
+<!-- Insert generated image here -->
+
+<p align="center">
+  <img src="comfyui_result.png" width="500">
+</p>
